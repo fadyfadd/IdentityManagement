@@ -1,4 +1,4 @@
-namespace Identity_Management.Models;
+namespace IdentityManagement.Models;
 
 public class ErrorViewModel
 {
