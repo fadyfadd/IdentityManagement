@@ -17,7 +17,7 @@ namespace IdentityManagement.Controllers
         {
             SelectListItem user1 = new SelectListItem();
             user1.Value = "32cbd3aa-b85e-4dcb-b6f7-775eac73b3e5";
-            user1.Text = "Admin";
+            user1.Text = "User";
 
             List<SelectListItem> list = new List<SelectListItem>();          
             list.Add(user1);

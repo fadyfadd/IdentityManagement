@@ -18,7 +18,7 @@ namespace IdentityManagement.Models
         [Required]
         
         public String? Email {set; get;}
-        [Required]
+    
 
         public List<SelectListItem>? Roles {set; get;}
         [Required]
