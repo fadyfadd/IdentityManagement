@@ -16,6 +16,9 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
   .AddDefaultTokenProviders()
   .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
   .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
+
+  builder.Services.ConfigureApplicationCookie(options => options.LoginPath = "/User/Login");
+
 var app = builder.Build();
 
 
@@ -24,7 +27,7 @@ if (!app.Environment.IsDevelopment())
   app.UseExceptionHandler("/Home/Error");
   app.UseHsts();
 }
-
+ 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

@@ -1,28 +1,30 @@
+@model RegisterModel
+
 @{
     ViewData["Title"] = "Register";
 }
-
-@model RegisterModel
-
-
+<h3>Register</h3>
 <form asp-action="Register" method="post">
     <div class="row" style="margin-bottom:1px">
         <label class="col-12 col-md-1">UserName</label>
-         <input asp-for="UserName" class="col-12 col-md-4" />
+        <input asp-for="UserName" class="col-12 col-md-4" />
     </div>
     <div class="row" style="margin-bottom:1px">
         <label class="col-12 col-md-1">E-Mail</label>
-         <input asp-for="Email" class="col-12 col-md-4" />
+        <input asp-for="Email" class="col-12 col-md-4" />
     </div>
-   <div class="row" style="margin-bottom:1px">
+    <div class="row" style="margin-bottom:1px">
         <label class="col-12 col-md-1">Password</label>
-         <input asp-for="Password" type="password" class="col-12 col-md-4" />
+        <input asp-for="Password" type="password" class="col-12 col-md-4" />
     </div>
-    <Button class="btn btn-primary">Submit</Button>    
-    <div style="margin-top:10px"  asp-validation-summary="All"></div>
-</form>     
+    <div class="row" style="margin-bottom:1px">
+        <label class="col-12 col-md-1">Password</label>
+        <select asp-for="SelectedRole" asp-items="@Model.Roles" asp-it type="password" class="col-12 col-md-4"></select>
+    </div>
+    <div class="btn-group" style="margin-top:1px">
+        <Button class="btn btn-primary">Submit</Button>
+         <Button type="Reset" class="btn btn-secondary">Reset</Button>
+    </div>
 
-
-
- 
-
+    <div style="margin-top:10px" asp-validation-summary="All"></div>
+</form>

@@ -10,6 +10,7 @@ namespace IdentityManagement.Models
     {
         [Required]
         public String? UserName {set; get;}
+        [Required]
         public String? Password {set; get;}
     }
 }

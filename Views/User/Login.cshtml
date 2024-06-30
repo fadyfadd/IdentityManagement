@@ -3,6 +3,7 @@
     ViewData["Title"] = "Login";
 }
 
+<h3>Login</h3>
 <form asp-action="Login" method="post">
     <div class="row" style="margin-bottom:1px">
         <label class="col-12 col-md-1">User Name</label>
@@ -12,7 +13,11 @@
         <label class="col-12 col-md-1">Password</label>
         <input asp-for="Password" type="password" class="col-12 col-md-4" />
     </div>
-    <Button class="btn btn-primary">Submit</Button>
+    <div class="btn-group" style="margin-top:1px">
+        <Button class="btn btn-primary">Submit</Button>
+        <Button type="reset" class="btn btn-secondary">Reset</Button>
+    </div>
+
     <div style="margin-top:10px"  asp-validation-summary="All"></div>
 </form>     
  

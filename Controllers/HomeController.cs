@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using IdentityManagement.Models;
 using Microsoft.AspNetCore.Identity;
 using IdentityManagement.DbContext;
+using Microsoft.AspNetCore.Authorization;
 
 
-namespace Identity_Management.Controllers;
+namespace IdentityManagement.Controllers;
 
 public class HomeController : Controller
 {
@@ -22,6 +23,7 @@ public class HomeController : Controller
         return Ok("error");
     }
 
+    [Authorize()]
     public IActionResult Index()
     {
         return View();
