@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace IdentityManagement.DbContext
 {
-    public class ApplicationRole : IdentityRole<Guid>
+    public class ApplicationRole : IdentityRole<Int32>
     {
         
     }

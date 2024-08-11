@@ -8,14 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
-  opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+   
 });
 
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
   .AddEntityFrameworkStores<ApplicationDbContext>()
   .AddDefaultTokenProviders()
-  .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
-  .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
+  .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Int32>>()
+  .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Int32>>();
 
   builder.Services.ConfigureApplicationCookie(options => options.LoginPath = "/User/Login");
 
